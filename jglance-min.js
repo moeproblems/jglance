@@ -1,3 +1,24 @@
+/**
+Copyright (C) 2011 by Mohammad "Moe" Hosseini
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+*/
 var JGlance=function(m){var c={data:{},root:$("body"),container:null,baseHeight:90,maxHeight:110,resultItemCustomClass:"",hoverAnimateSpeed:100,hoverInterval:250,fadeInSpeed:350,enableHoverInfo:false,enableLightBox:true,photoClickCallback:function(){},lightBoxInfoCallback:function(){},hoverInfoCallback:function(){},photoErrorCallback:function(){},hoverInfoTransSpeed:250,maxHoverWidth:360,maxHoverHeight:360,maxPerRow:4},t=null,u=$.browser.msie,z=[50,100,150,200,250,300,350,400,450,500,550,600,650,
 700,750],g=[],l=Number.MAX_VALUE,A=0,B=0,p=0,q=2,n=false,r=null,e=null,d=null,j=null,h=null,f=-1,C=function(){},D=function(){},E=function(){};$.extend(c,m);var v=function(a){return function(b){$(document).bind("keyup",function(i){(i.keyCode==a||i.which==a)&&b()})}},N=function(){w()},F=function(){f!=0&&x(g[--f])},G=function(){f+1!=g.length&&x(g[++f])},H=function(){h=typeof c.container=="string"?$(c.container):c.container;p=h.width();A=c.baseHeight;B=c.maxHeight;q=Math.max(c.maxPerRow,q);t=c.root;C=
 v(27);D=v(37);E=v(39)};H();m=document.createElement("div");m.setAttribute("style","transition:top 1s ease;-o-transition:top 1s ease;-webkit-transition:top 1s ease;-moz-transition:top 1s ease;");var n=!u&&!(!m.style.transition&&!m.style.oTransition&&!m.style.webkitTransition&&!m.style.MozTransition),O=function(){if(j&&d){var a=$(document),b=$(window);j.css({width:a.width(),height:a.height()});d.css({width:b.width(),height:b.height()})}},w=function(){j&&d&&(j.remove(),d.remove(),j=d=null,$(document).unbind("keyup"))},
