@@ -1,0 +1,241 @@
+/*  jGlance CSS - Version 0.1
+*   Author: Moe Hosseini
+*   Visit http://www.moewashere.com/jglance for demo, docs and guides.
+********************************************************/
+
+.jg_clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.jg_clearfix {
+    display: inline-block;
+}
+
+html[xmlns] .jg_clearfix {
+    display: block;
+}
+
+* html .jg_clearfix {
+    height: 1%;
+}
+
+.jg_result-row {
+    overflow: hidden;
+}
+
+.jg_result-item {
+    float: left;
+    position: relative;
+    margin: 3px;
+}
+
+.jg_result-item.last {
+    margin-right: 0;
+    float: right;
+}
+
+.jg_result-item img.faded-out {
+    -moz-opacity: 0;
+    opacity: 0;
+    -moz-transition: opacity 350ms linear;
+    -o-transition: opacity 350ms linear;
+    -webkit-transition: opacity 350ms linear;
+    transition: opacity 350ms linear;
+}
+
+.jg_result-item img.faded-out.faded-in {
+    -moz-opacity: 1;
+    opacity: 1;
+}
+
+.jg_result-row .jg_result-item:first-child {
+    margin-left: 0;
+}
+
+.jg_result-hover {
+    z-index: 999;
+    position: absolute;
+    display: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin: 10px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    -moz-box-shadow: -4px 4px 5px 1px rgba(0, 0, 0, 0.3), 4px 4px 5px 1px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: -4px 4px 5px 1px rgba(0, 0, 0, 0.3), 4px 4px 5px 1px rgba(0, 0, 0, 0.3);
+    -ms-box-shadow: -4px 4px 5px 1px rgba(0, 0, 0, 0.3), 4px 4px 5px 1px rgba(0, 0, 0, 0.3);
+    -o-box-shadow: -4px 4px 5px 1px rgba(0, 0, 0, 0.3), 4px 4px 5px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: -4px 4px 5px 1px rgba(0, 0, 0, 0.3), 4px 4px 5px 1px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.jg_result-hover > div {
+    position: relative;
+}
+
+.jg_result-hover img {
+    padding: 10px 10px 7px;
+}
+
+.jg_hover-info {
+    bottom: 10px;
+    left: 0;
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    -moz-opacity: 0;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+    opacity: 0;
+    -moz-transition: opacity 250ms linear;
+    -o-transition: opacity 250ms linear;
+    -webkit-transition: opacity 250ms linear;
+    transition: opacity 250ms linear;
+}
+
+.jg_hover-info.faded-in {
+    opacity: 1;
+}
+
+.jg_overlay {
+    background-color: #000;
+    -moz-opacity: 0.9;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=90);
+    opacity: 0.9;
+    left: 0;
+    position: absolute;
+    top: 0;
+    z-index: 9998;
+}
+
+.jg_lightbox {
+    background: none transparent;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 9999;
+}
+
+.jg_lightbox > div {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.jg_close {
+    background-color: rgba(255, 255, 255, 0.25);
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    color: #fff;
+    margin: 10px 10px 0 0;
+    padding: 5px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.jg_close:hover, .jg_close:active {
+    text-decoration: none;
+    color: #fff;
+}
+
+.jg_lightbox-container {
+    margin: 10px auto 0;
+    position: relative;
+    width: 845px;
+}
+
+/***************************************************************
+Modify the background property if you wish to use the light box
+***************************************************************/
+.jg_left-arrow, .jg_right-arrow {
+    /* background should be pointing to the location of the arrows.png file or your own arrows */
+    background: url("/jglance/images/arrows.png") no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    display: block;
+    height: 90px;
+    position: absolute;
+    top: 150px;
+    width: 90px;
+    -moz-opacity: 0.3;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=30);
+    opacity: 0.3;
+    -moz-transition: opacity 150ms linear;
+    -o-transition: opacity 150ms linear;
+    -webkit-transition: opacity 150ms linear;
+    transition: opacity 150ms linear;
+    z-index: 5;
+}
+
+.jg_left-arrow:hover, .jg_right-arrow:hover, .jg_left-arrow:active, .jg_right-arrow:active {
+    -moz-opacity: 1;
+    opacity: 1;
+}
+
+.jg_left-arrow.forced, .jg_right-arrow.forced {
+    -moz-opacity: 1 !important;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=100) !important;
+    opacity: 1 !important;
+}
+
+.jg_left-arrow {
+    background-position: 27px 29px;
+    left: 0;
+}
+
+.jg_right-arrow {
+    background-position: -236px 29px;
+    right: 0;
+}
+
+.jg_lightbox-photo {
+    margin: 0 auto;
+    text-align: center;
+    width: 700px;
+}
+
+.jg_lightbox-photo img {
+    max-width: 690px;
+    max-height: 490px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #333;
+    -moz-box-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.5);
+    -webkit-box-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.5);
+    -ms-box-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.5);
+    -o-box-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.5);
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding: 5px;
+    background-color: #fff;
+}
+
+.jg_lightbox-info {
+    text-align: left;
+}
