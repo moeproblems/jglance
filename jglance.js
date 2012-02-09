@@ -394,7 +394,7 @@ var JGlance = function(args) {
                             .css({ width: photo.adjustedWidth, height: photo.adjustedHeight })
                             .addClass( isIE ? '' : fadeOutClass )
                             .click( function() {
-                                settings.imageClickCallback(photo, settings.data);
+                                settings.photoClickCallback(photo, settings.data);
                                 settings.enableLightBox && startLightBox.call(this); })
                             .attr({
                                 src:    photo.thumbnail })
