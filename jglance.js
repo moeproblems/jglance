@@ -50,7 +50,6 @@ var JGlance = function(args) {
             maxPerRow:          4   // minimum of 2 is enforced
         },
         root = null,
-        isIE = $.browser.msie,
         clearClass = 'jg_clearfix',                 // css class name for clear fix
         resultRowClass = 'jg_result-row',           // css class name for result row
         resultItemClass = 'jg_result-item',         // css class name for each result element
@@ -147,8 +146,7 @@ var JGlance = function(args) {
     // detect css3 transition support
     var d = document.createElement('div');
     d.setAttribute('style', 'transition:top 1s ease;-o-transition:top 1s ease;-webkit-transition:top 1s ease;-moz-transition:top 1s ease;');
-    // short circuit IE for now, yup
-    transSupported = !isIE && !!(d.style.transition || d.style.oTransition || d.style.webkitTransition || d.style.MozTransition);
+    transSupported = !!(d.style.transition || d.style.oTransition || d.style.webkitTransition || d.style.MozTransition);
 
     /**
      * Callback for window resize
@@ -392,14 +390,14 @@ var JGlance = function(args) {
                             .error( function () { settings.photoErrorCallback(photo, $(this), settings.data); })
                             .data( 'index', cache.length + index )
                             .css({ width: photo.adjustedWidth, height: photo.adjustedHeight })
-                            .addClass( isIE ? '' : fadeOutClass )
+                            .addClass( transSupported ? fadeOutClass : '' )
                             .click( function() {
                                 settings.photoClickCallback(photo, settings.data);
                                 settings.enableLightBox && startLightBox.call(this); })
                             .attr({
                                 src:    photo.thumbnail })
                             .load(function() {
-                                if ( isIE ) { return; }
+                                if ( !transSupported ) { return; }
                                 var $this = $(this);
                                 setTimeout( function() {
                                     if ( transSupported ) {
